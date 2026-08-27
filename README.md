@@ -3,8 +3,7 @@
 
 ## Overview
 **KSys** is the spiritual successor to [LumenOS](https://github.com/xlumen1/LumenOS).
-Due to scope creep, various bugs, and a terrible codebase, LumenOS' development has been put on indefinate hold.
-Instead, KSys will be developed in its place.
+KSys is fully 64 bit, and designed to be over all more cohesive than LumenOS.
 
 ## Dependencies
 
