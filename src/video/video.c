@@ -104,3 +104,9 @@ void video_print(const char *s, uint32_t column, uint32_t row, color_t color) {
 	}
 }
 
+void video_write(const char *s, uint32_t column, uint32_t row, color_t color, size_t n) {
+	for (size_t i = 0; i < n; i++) {
+		video_printchar(s[i], column+i, row, color);
+	}
+}
+

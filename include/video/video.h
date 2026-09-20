@@ -37,4 +37,5 @@ void video_fillrect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, col
 
 void video_printchar(char c, uint32_t column, uint32_t row, color_t color);
 void video_print(const char *s, uint32_t column, uint32_t row, color_t color);
+void video_write(const char *s, uint32_t column, uint32_t row, color_t color, size_t n);
 
