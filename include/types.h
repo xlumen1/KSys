@@ -15,3 +15,5 @@ typedef unsigned long uint64_t;
 
 typedef uint8_t bool_t;
 
+typedef __SIZE_TYPE__ size_t;
+
