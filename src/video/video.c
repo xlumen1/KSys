@@ -61,12 +61,12 @@ color_t video_getpixel(uint32_t x, uint32_t y) {
 
 void video_rect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, color_t color) {
 	uint32_t c = colorAdapter(color);
-	for (int h = 0; h < width; h++) {
+	for (uint32_t h = 0; h < width; h++) {
 		isetp(x+h, y, c);
 		isetp(x+h, y+height-1, c);
 	}
 
-	for (int v = 0; v < height; v++) {
+	for (uint32_t v = 0; v < height; v++) {
 		isetp(x, y+v, c);
 		isetp(x+width-1, y+v, c);
 	}
@@ -74,8 +74,8 @@ void video_rect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, color_t
 
 void video_fillrect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, color_t color) {
 	uint32_t c = colorAdapter(color);
-	for (int v = 0; v < height; v++) {
-		for (int h = 0; h < width; h++) {
+	for (uint32_t v = 0; v < height; v++) {
+		for (uint32_t h = 0; h < width; h++) {
 			isetp(x+h, y+v, c);
 		}
 	}
@@ -87,14 +87,15 @@ void video_printchar(char chr, uint32_t column, uint32_t row, color_t color) {
 	uint32_t bx = column * FONT_WIDTH;
 	uint32_t by = row * FONT_HEIGHT;
 
-	for (int y = 0; y < FONT_HEIGHT; y++) {
-		for (int x = 0; x < FONT_WIDTH; x++) {
+	for (uint32_t y = 0; y < FONT_HEIGHT; y++) {
+		for (uint32_t x = 0; x < FONT_WIDTH; x++) {
 			if (FONT_BIT(chr, x, y) != 0) {
 				isetp(bx+x, by+y, c);
 			}
 		}
 	}
 }
+
 void video_print(const char *s, uint32_t column, uint32_t row, color_t color) {
 	int i = 0;
 	while (s[i] != '\0') {

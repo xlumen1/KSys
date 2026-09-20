@@ -15,7 +15,7 @@ void *memset(void *dest, uint8_t c, uint32_t n) {
 
 void *memmove(void *dest, const void *src, uint32_t n) {
 	uint8_t *d = dest;
-	const uint8_t *s = (const char *)src;
+	const uint8_t *s = src;
 
 	if (d == s || n == 0) {
 		return dest;
