@@ -7,7 +7,5 @@
 #define FONT_BIT(c, column, row) \
 		(font_data[((uint8_t)c*FONT_WIDTH)+column]&(1<<row))
 
-const uint8_t font_data[] = {
-	#embed "font.dat"
-};
+extern const uint8_t font_data[];
 

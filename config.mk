@@ -35,7 +35,7 @@ CPY := llvm-objcopy
 
 CCFLAGS := -target $(TARGET) -ffreestanding -fno-stack-protector \
 		   -fno-pic -fno-pie -mno-red-zone -mcmodel=kernel -Wall -Wextra -Wpedantic \
-		   -std=gnu23 -c -I$(INCLUDE) -g
+		   -std=gnu23 -c -I$(INCLUDE) --embed-dir=$(RESOURCES) -g
 LDFLAGS := -T $(RESOURCES)/linker.ld -nostdlib --no-dynamic-linker -g
 ASFLAGS := -target $(TARGET) -c
 
