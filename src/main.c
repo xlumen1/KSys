@@ -1,5 +1,6 @@
 #include "ksys.h"
 #include "video/video.h"
+#include "terminal/terminal.h"
 
 struct bootInfo *gBootInfo;
 
@@ -7,20 +8,21 @@ void kmain(struct bootInfo *kbp_bootinfo) {
 	gBootInfo = kbp_bootinfo;
 
 	video_init();
+	terminal_init();
 
-	video_fillrect(0, 0, masterFramebuffer.width, masterFramebuffer.height, (color_t){
-			.r = 255,
-			.g = 255,
-			.b = 255
-	});
+	terminal_print(" _______\n");
+	terminal_print("< KSys! >\n");
+	terminal_print(" -------\n");
+	terminal_print("        \\   ^__^\n");
+	terminal_print("         \\  (oo)\\_______\n");
+	terminal_print("            (__)\\       )\\/\\\n");
+	terminal_print("                ||----w |\n");
+	terminal_print("                ||     ||\n");
 
-	color_t font_color = (color_t) {
-		.r = 0,
-		.g = 0,
-		.b = 0
-	};
-
-	video_print("KSys Initialized", 0, 0, font_color);
+	for (int i = 0; i < 2600; i++) {
+		terminal_sendchar('A'+(i%26));
+		terminal_flush();
+	}
 
 	for (;;) {} ;
 }
