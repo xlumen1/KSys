@@ -19,10 +19,5 @@ void kmain(struct bootInfo *kbp_bootinfo) {
 	terminal_print("                ||----w |\n");
 	terminal_print("                ||     ||\n");
 
-	for (int i = 0; i < 2600; i++) {
-		terminal_sendchar('A'+(i%26));
-		terminal_flush();
-	}
-
 	for (;;) {} ;
 }
