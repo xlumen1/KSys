@@ -1,6 +1,7 @@
 #include "ksys.h"
 #include "video/video.h"
 #include "terminal/terminal.h"
+#include "gdt.h"
 
 struct bootInfo *gBootInfo;
 
@@ -9,6 +10,8 @@ void kmain(struct bootInfo *kbp_bootinfo) {
 
 	video_init();
 	terminal_init();
+
+	gdt_init();
 
 	terminal_print(" _______\n");
 	terminal_print("< KSys! >\n");
