@@ -34,3 +34,21 @@ void *memmove(void *dest, const void *src, uint32_t n) {
 	return dest;
 }
 
+int strncmp(const char *str1, const char *str2, size_t n) {
+	const uint8_t *u1 = (const uint8_t *)str1;
+	const uint8_t *u2 = (const uint8_t *)str2;
+
+	if (n == 0) return 0;
+
+	while (n > 0 && *u1 && *u1 == * u2) {
+		u1++;
+		u2++;
+		n--;
+	}
+
+	if (n == 0) {
+		return 0;
+	}
+
+	return *u1 - *u2;
+}
