@@ -1,7 +1,7 @@
 #include "terminal/terminal.h"
 #include "video/video.h"
 #include "font.h"
-#include "memory.h"
+#include "util.h"
 
 #define MAX_TERMINAL_BUFFER (1024 * 1024)
 char terminal_buffer[MAX_TERMINAL_BUFFER];
